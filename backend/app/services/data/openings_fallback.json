@@ -1,0 +1,113 @@
+{
+  "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1": {
+    "opening": null,
+    "total_games": 4200000,
+    "moves": [
+      {"uci": "e2e4", "san": "e4", "games": 1900000, "white_pct": 49.5, "draw_pct": 25.0, "black_pct": 25.5},
+      {"uci": "d2d4", "san": "d4", "games": 1400000, "white_pct": 49.0, "draw_pct": 27.0, "black_pct": 24.0},
+      {"uci": "g1f3", "san": "Nf3", "games": 500000, "white_pct": 48.5, "draw_pct": 27.5, "black_pct": 24.0},
+      {"uci": "c2c4", "san": "c4", "games": 400000, "white_pct": 48.0, "draw_pct": 28.0, "black_pct": 24.0}
+    ]
+  },
+  "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1": {
+    "opening": {"eco": "B00", "name": "King's Pawn Game"},
+    "total_games": 1900000,
+    "moves": [
+      {"uci": "c7c5", "san": "c5", "games": 720000, "white_pct": 49.0, "draw_pct": 23.0, "black_pct": 28.0},
+      {"uci": "e7e5", "san": "e5", "games": 620000, "white_pct": 50.0, "draw_pct": 25.0, "black_pct": 25.0},
+      {"uci": "e7e6", "san": "e6", "games": 230000, "white_pct": 50.5, "draw_pct": 25.5, "black_pct": 24.0},
+      {"uci": "c7c6", "san": "c6", "games": 180000, "white_pct": 50.0, "draw_pct": 27.0, "black_pct": 23.0},
+      {"uci": "d7d6", "san": "d6", "games": 90000, "white_pct": 51.0, "draw_pct": 24.0, "black_pct": 25.0}
+    ]
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "opening": {"eco": "C20", "name": "King's Pawn Game: Open"},
+    "total_games": 620000,
+    "moves": [
+      {"uci": "g1f3", "san": "Nf3", "games": 460000, "white_pct": 51.0, "draw_pct": 25.0, "black_pct": 24.0},
+      {"uci": "f1c4", "san": "Bc4", "games": 70000, "white_pct": 50.0, "draw_pct": 22.0, "black_pct": 28.0},
+      {"uci": "b1c3", "san": "Nc3", "games": 50000, "white_pct": 49.0, "draw_pct": 24.0, "black_pct": 27.0}
+    ]
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2": {
+    "opening": {"eco": "C40", "name": "King's Knight Opening"},
+    "total_games": 460000,
+    "moves": [
+      {"uci": "b8c6", "san": "Nc6", "games": 330000, "white_pct": 51.0, "draw_pct": 25.0, "black_pct": 24.0},
+      {"uci": "g8f6", "san": "Nf6", "games": 70000, "white_pct": 50.0, "draw_pct": 26.0, "black_pct": 24.0},
+      {"uci": "d7d6", "san": "d6", "games": 40000, "white_pct": 53.0, "draw_pct": 23.0, "black_pct": 24.0}
+    ]
+  },
+  "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3": {
+    "opening": {"eco": "C44", "name": "King's Knight Opening: Normal Variation"},
+    "total_games": 330000,
+    "moves": [
+      {"uci": "f1b5", "san": "Bb5", "games": 150000, "white_pct": 52.0, "draw_pct": 26.0, "black_pct": 22.0},
+      {"uci": "f1c4", "san": "Bc4", "games": 120000, "white_pct": 51.0, "draw_pct": 24.0, "black_pct": 25.0},
+      {"uci": "d2d4", "san": "d4", "games": 40000, "white_pct": 50.0, "draw_pct": 25.0, "black_pct": 25.0}
+    ]
+  },
+  "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3": {
+    "opening": {"eco": "C60", "name": "Ruy Lopez (Espagnole)"},
+    "total_games": 150000,
+    "moves": [
+      {"uci": "a7a6", "san": "a6", "games": 90000, "white_pct": 52.0, "draw_pct": 27.0, "black_pct": 21.0},
+      {"uci": "g8f6", "san": "Nf6", "games": 30000, "white_pct": 51.0, "draw_pct": 26.0, "black_pct": 23.0},
+      {"uci": "f8c5", "san": "Bc5", "games": 15000, "white_pct": 50.0, "draw_pct": 24.0, "black_pct": 26.0}
+    ]
+  },
+  "r1bqkbnr/pppp1ppp/2n5/2B1p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3": {
+    "opening": {"eco": "C50", "name": "Italian Game (Italienne)"},
+    "total_games": 120000,
+    "moves": [
+      {"uci": "f8c5", "san": "Bc5", "games": 55000, "white_pct": 50.0, "draw_pct": 24.0, "black_pct": 26.0},
+      {"uci": "g8f6", "san": "Nf6", "games": 50000, "white_pct": 51.0, "draw_pct": 25.0, "black_pct": 24.0},
+      {"uci": "f8e7", "san": "Be7", "games": 8000, "white_pct": 52.0, "draw_pct": 26.0, "black_pct": 22.0}
+    ]
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "opening": {"eco": "B20", "name": "Sicilian Defense (Sicilienne)"},
+    "total_games": 720000,
+    "moves": [
+      {"uci": "g1f3", "san": "Nf3", "games": 450000, "white_pct": 50.0, "draw_pct": 23.0, "black_pct": 27.0},
+      {"uci": "b1c3", "san": "Nc3", "games": 120000, "white_pct": 49.0, "draw_pct": 22.0, "black_pct": 29.0},
+      {"uci": "c2c3", "san": "c3", "games": 90000, "white_pct": 49.5, "draw_pct": 24.0, "black_pct": 26.5}
+    ]
+  },
+  "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3": {
+    "opening": {"eco": "B40", "name": "Sicilian Defense: French Variation"},
+    "total_games": 180000,
+    "moves": [
+      {"uci": "d2d4", "san": "d4", "games": 140000, "white_pct": 50.0, "draw_pct": 23.0, "black_pct": 27.0},
+      {"uci": "b1c3", "san": "Nc3", "games": 25000, "white_pct": 49.0, "draw_pct": 24.0, "black_pct": 27.0}
+    ]
+  },
+  "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "opening": {"eco": "C00", "name": "French Defense (Française)"},
+    "total_games": 230000,
+    "moves": [
+      {"uci": "d2d4", "san": "d4", "games": 180000, "white_pct": 51.0, "draw_pct": 25.0, "black_pct": 24.0},
+      {"uci": "g1f3", "san": "Nf3", "games": 20000, "white_pct": 50.0, "draw_pct": 26.0, "black_pct": 24.0},
+      {"uci": "b1c3", "san": "Nc3", "games": 15000, "white_pct": 50.0, "draw_pct": 24.0, "black_pct": 26.0}
+    ]
+  },
+  "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "opening": {"eco": "B10", "name": "Caro-Kann Defense (Caro-Kann)"},
+    "total_games": 180000,
+    "moves": [
+      {"uci": "d2d4", "san": "d4", "games": 130000, "white_pct": 51.0, "draw_pct": 27.0, "black_pct": 22.0},
+      {"uci": "b1c3", "san": "Nc3", "games": 25000, "white_pct": 50.0, "draw_pct": 26.0, "black_pct": 24.0},
+      {"uci": "g1f3", "san": "Nf3", "games": 15000, "white_pct": 50.0, "draw_pct": 27.0, "black_pct": 23.0}
+    ]
+  },
+  "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1": {
+    "opening": {"eco": "A40", "name": "Queen's Pawn Game"},
+    "total_games": 1400000,
+    "moves": [
+      {"uci": "g8f6", "san": "Nf6", "games": 620000, "white_pct": 49.0, "draw_pct": 28.0, "black_pct": 23.0},
+      {"uci": "d7d5", "san": "d5", "games": 520000, "white_pct": 49.5, "draw_pct": 29.0, "black_pct": 21.5},
+      {"uci": "e7e6", "san": "e6", "games": 120000, "white_pct": 49.0, "draw_pct": 27.0, "black_pct": 24.0},
+      {"uci": "f7f5", "san": "f5", "games": 80000, "white_pct": 51.0, "draw_pct": 24.0, "black_pct": 25.0}
+    ]
+  }
+}

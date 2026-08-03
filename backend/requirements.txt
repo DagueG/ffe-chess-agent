@@ -1,0 +1,15 @@
+# --- Étape 1 : socle API ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic-settings==2.7.1
+httpx==0.28.1
+
+# --- Étape 2 : logique échecs ---
+chess==1.11.1                 # validation FEN, légalité des coups, pilotage UCI de Stockfish
+
+# --- Étapes suivantes (décommenter au fur et à mesure) ---
+# pymongo==4.10.1             # persistance MongoDB
+# pymilvus==2.5.4             # base vectorielle Milvus
+# sentence-transformers==3.3.1 # embeddings pour le RAG
+# langgraph==0.2.60           # orchestration de l'agent
+# google-api-python-client==2.156.0  # API YouTube Data v3
