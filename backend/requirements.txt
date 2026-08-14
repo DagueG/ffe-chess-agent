@@ -7,6 +7,12 @@ httpx==0.28.1
 # --- Étape 2 : logique échecs ---
 chess==1.11.1                 # validation FEN, légalité des coups, pilotage UCI de Stockfish
 
+# --- Étape 3 : RAG (recherche vectorielle) ---
+setuptools<81
+pymilvus==2.5.4              # client Milvus
+sentence-transformers==3.3.1 # embeddings (modèle MiniLM par défaut)
+
+
 # --- Étapes suivantes (décommenter au fur et à mesure) ---
 # pymongo==4.10.1             # persistance MongoDB
 # pymilvus==2.5.4             # base vectorielle Milvus

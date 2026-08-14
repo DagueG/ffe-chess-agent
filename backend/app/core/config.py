@@ -20,6 +20,11 @@ class Settings(BaseSettings):
 
     MILVUS_HOST: str = "milvus"
     MILVUS_PORT: int = 19530
+    MILVUS_COLLECTION: str = "wikichess"
+
+    # RAG / embeddings
+    EMBEDDING_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
+    EMBEDDING_DIM: int = 384
 
     LICHESS_API_BASE: str = "https://explorer.lichess.ovh"
     STOCKFISH_PATH: str = "/usr/games/stockfish"

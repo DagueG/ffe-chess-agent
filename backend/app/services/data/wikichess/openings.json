@@ -1,0 +1,46 @@
+{
+  "articles": [
+    {
+      "opening": "Italian Game",
+      "opening_fr": "Partie Italienne",
+      "eco": "C50",
+      "source": "wikichess-curated",
+      "content": "La Partie Italienne débute par les coups 1.e4 e5 2.Cf3 Cc6 3.Fc4. C'est l'une des plus anciennes ouvertures, étudiée dès le XVIe siècle par les maîtres italiens comme Greco. L'idée du fou en c4 est de viser la case f7, le point le plus faible de la position noire, tout en préparant un développement rapide et le petit roque. L'Italienne mène à des positions ouvertes et tactiques, idéales pour les joueurs débutants et intermédiaires qui veulent apprendre les principes d'ouverture : contrôle du centre, développement des pièces mineures, et sécurité du roi. La variante la plus tranchante est le Giuoco Piano (jeu tranquille) avec 3...Fc5, tandis que 3...Cf6 mène à la défense des deux cavaliers, plus dynamique. Un piège classique à connaître est l'attaque Fried Liver après 4.Cg5, qui sacrifie une pièce pour une attaque violente sur le roi noir."
+    },
+    {
+      "opening": "Ruy Lopez",
+      "opening_fr": "Partie Espagnole",
+      "eco": "C60",
+      "source": "wikichess-curated",
+      "content": "La Partie Espagnole, ou Ruy Lopez, commence par 1.e4 e5 2.Cf3 Cc6 3.Fb5. Nommée d'après le prêtre espagnol Ruy López de Segura au XVIe siècle, elle est considérée comme l'une des ouvertures les plus profondes et respectées des échecs, jouée au plus haut niveau depuis des siècles. L'idée du fou en b5 est de mettre la pression sur le cavalier c6, qui défend le pion central e5. Contrairement à une croyance répandue, les Blancs ne gagnent pas immédiatement le pion e5 après 4.Fxc6 dxc6 5.Cxe5 à cause de 5...Dd4. La ligne principale continue par 3...a6 (variante Morphy) 4.Fa4 Cf6 5.O-O. L'Espagnole enseigne la stratégie positionnelle à long terme : pression sur le centre, manoeuvres de cavaliers, et exploitation de la structure de pions. La variante Berlinoise, rendue célèbre par Kramnik contre Kasparov en 2000, est réputée très solide pour les Noirs."
+    },
+    {
+      "opening": "Sicilian Defense",
+      "opening_fr": "Défense Sicilienne",
+      "eco": "B20",
+      "source": "wikichess-curated",
+      "content": "La Défense Sicilienne naît après 1.e4 c5. C'est la réponse la plus populaire et la plus combative à 1.e4 au plus haut niveau. Au lieu de symétriser avec 1...e5, les Noirs répondent de manière asymétrique : ils cèdent le centre immédiat mais préparent une contre-attaque sur l'aile dame grâce à la colonne c semi-ouverte. La Sicilienne mène à des positions déséquilibrées et riches en chances de gain pour les deux camps, ce qui explique sa popularité chez les joueurs qui jouent pour gagner avec les Noirs. Les grandes variantes incluent la Najdorf (5...a6), la plus analysée de toute la théorie des échecs et favorite de Fischer et Kasparov ; la Dragon (avec le fianchetto ...g6) aux attaques opposées féroces ; et la Scheveningue avec sa structure de pions compacte. Contre la Sicilienne, les Blancs peuvent choisir l'Attaque anglaise agressive, ou des systèmes plus calmes comme la variante Alapin 2.c3."
+    },
+    {
+      "opening": "French Defense",
+      "opening_fr": "Défense Française",
+      "eco": "C00",
+      "source": "wikichess-curated",
+      "content": "La Défense Française commence par 1.e4 e6, préparant 2...d5 pour contester le centre. C'est une ouverture solide et stratégique, réputée pour sa robustesse. Le principal défi pour les Noirs est le fou de cases blanches en c8, souvent qualifié de mauvais fou car il est bloqué par sa propre chaîne de pions e6-d5. En échange, les Noirs obtiennent une structure de pions solide et des plans clairs de contre-attaque sur l'aile dame avec ...c5. Les variantes principales sont l'Avancée (3.e5) qui ferme le centre et donne de l'espace aux Blancs ; l'Échange (3.exd5) plutôt symétrique ; la Tarrasch (3.Cd2) flexible ; et la Winawer (3.Cc3 Fb4) très tranchante avec des déséquilibres de structure. La Française enseigne les thèmes des chaînes de pions, des ruptures ...c5 et ...f6, et de la lutte pour les cases faibles."
+    },
+    {
+      "opening": "Caro-Kann Defense",
+      "opening_fr": "Défense Caro-Kann",
+      "eco": "B10",
+      "source": "wikichess-curated",
+      "content": "La Défense Caro-Kann s'ouvre par 1.e4 c6, préparant 2...d5 comme la Française mais sans enfermer le fou de cases blanches. C'est précisément l'avantage majeur du Caro-Kann sur la Française : après 1.e4 c6 2.d4 d5, les Noirs peuvent développer leur fou dame activement en f5 ou g4 avant de jouer ...e6. Réputée extrêmement solide, cette défense est appréciée des joueurs positionnels et a été employée par des champions du monde comme Capablanca, Petrosian et Karpov. Le prix de cette solidité est une certaine passivité et un léger retard de développement. Les variantes principales incluent la Classique (4...Ff5), l'Avancée (3.e5) où le fou sort en f5 avant d'être enfermé, la variante d'échange, et l'Attaque Panov-Botvinnik avec un pion isolé menant à un jeu plus dynamique. Le Caro-Kann offre aux Noirs des finales saines et une structure sans faiblesse."
+    },
+    {
+      "opening": "Queen's Gambit",
+      "opening_fr": "Gambit Dame",
+      "eco": "D06",
+      "source": "wikichess-curated",
+      "content": "Le Gambit Dame commence par 1.d4 d5 2.c4. Malgré son nom, ce n'est pas un vrai gambit : les Blancs offrent le pion c4 mais peuvent toujours le récupérer, car les Noirs ne peuvent pas le conserver durablement. L'idée stratégique est de dévier le pion d5 pour obtenir une supériorité au centre et une colonne c semi-ouverte. Si les Noirs acceptent avec 2...dxc4 (Gambit Dame Accepté), ils cèdent le centre mais gagnent du temps. S'ils refusent avec 2...e6 (Gambit Dame Refusé), ils construisent une position solide mais doivent résoudre le problème récurrent du fou de cases blanches, enfermé derrière le pion e6. La Défense Slave 2...c6 est une troisième option majeure qui garde le fou libre. Le Gambit Dame est un pilier du répertoire positionnel, enseignant le contrôle du centre par les pions de flanc, les pions isolés et suspendus, et la pression sur les colonnes ouvertes. Il fut au coeur de nombreux championnats du monde."
+    }
+  ]
+}
