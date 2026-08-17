@@ -6,8 +6,9 @@ import { ChessApiService } from './chess-api.service';
 
 /**
  * Composant principal : échiquier interactif + panneau de recommandations.
- * À chaque coup joué, on récupère le FEN et on interroge le backend
- * (coups théoriques, évaluation Stockfish, contexte RAG, vidéos).
+ * À chaque coup, on appelle l'agent LangGraph (un seul endpoint) qui orchestre
+ * tous les outils et renvoie une réponse unifiée, dont une synthèse en langage
+ * naturel.
  */
 @Component({
   selector: 'app-root',
@@ -21,8 +22,9 @@ export class AppComponent {
 
   fen = 'Position de départ';
   loading = false;
-  error: string | null = null;
 
+  synthesis = '';
+  synthesisSource = '';
   moves: any[] = [];
   movesSource = '';
   evaluation: any = null;
@@ -42,53 +44,29 @@ export class AppComponent {
     this.analyze(fen);
   }
 
-  /** Interroge le backend pour la position courante. */
+  /** Appel unique à l'agent LangGraph. */
   analyze(fen: string): void {
     this.fen = fen;
     this.loading = true;
-    this.error = null;
-    this.ragResults = [];
-    this.videos = [];
-    this.openingName = '';
 
-    // 1. Coups théoriques (Lichess + fallback)
-    this.api.getMoves(fen).subscribe({
+    this.api.analyze(fen).subscribe({
       next: (res) => {
+        this.synthesis = res.synthesis ?? '';
+        this.synthesisSource = res.synthesis_source ?? '';
         this.moves = res.moves ?? [];
-        this.movesSource = res.source ?? '';
-        const name = res.opening?.name;
-        if (name) {
-          this.openingName = name;
-          this.loadContext(name);
-        }
+        this.movesSource = res.moves_source ?? '';
+        this.evaluation = res.evaluation ?? null;
+        this.openingName = res.opening_name ?? '';
+        this.ragResults = res.rag_results ?? [];
+        this.videos = res.videos ?? [];
         this.loading = false;
       },
       error: () => {
-        this.moves = [];
         this.loading = false;
       },
     });
-
-    // 2. Évaluation Stockfish (en parallèle)
-    this.api.evaluate(fen).subscribe({
-      next: (res) => (this.evaluation = res),
-      error: () => (this.evaluation = null),
-    });
   }
 
-  /** Contexte RAG + vidéos pour l'ouverture identifiée. */
-  private loadContext(opening: string): void {
-    this.api.vectorSearch(opening).subscribe({
-      next: (res) => (this.ragResults = res.results ?? []),
-      error: () => (this.ragResults = []),
-    });
-    this.api.getVideos(opening).subscribe({
-      next: (res) => (this.videos = res.videos ?? []),
-      error: () => (this.videos = []),
-    });
-  }
-
-  /** Formate le score Stockfish pour l'affichage. */
   formatEval(): string {
     if (!this.evaluation) return '—';
     if (this.evaluation.eval_type === 'mate') {
@@ -100,6 +78,7 @@ export class AppComponent {
 
   reset(): void {
     this.board.reset();
+    this.synthesis = '';
     this.moves = [];
     this.evaluation = null;
     this.ragResults = [];

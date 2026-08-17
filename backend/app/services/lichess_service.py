@@ -117,3 +117,39 @@ async def get_theoretical_moves(fen: str, top_moves: int = 8) -> dict:
     raise LichessError(
         "Lichess est indisponible et la position n'est pas dans la base locale."
     )
+
+
+def get_theoretical_moves_sync(fen: str, top_moves: int = 8) -> dict:
+    """Version synchrone de get_theoretical_moves, pour l'orchestration LangGraph.
+
+    Même logique (Lichess puis repli local) mais avec un client HTTP synchrone,
+    plus simple à appeler depuis les noeuds du graphe.
+    """
+    params = {
+        "fen": fen,
+        "moves": top_moves,
+        "topGames": 0,
+        "recentGames": 0,
+        "variant": "standard",
+        "speeds": "blitz,rapid,classical",
+        "ratings": "1600,1800,2000,2200,2500",
+    }
+    try:
+        with httpx.Client(timeout=_TIMEOUT, headers=_HEADERS) as client:
+            response = client.get(_EXPLORER_URL, params=params)
+            response.raise_for_status()
+            data = response.json()
+        result = _normalize_lichess_response(data, top_moves)
+        result["source"] = "lichess"
+        return result
+    except (httpx.HTTPError, ValueError):
+        pass
+
+    fallback = _fallback_lookup(fen, top_moves)
+    if fallback is not None:
+        fallback["source"] = "fallback"
+        return fallback
+
+    raise LichessError(
+        "Lichess est indisponible et la position n'est pas dans la base locale."
+    )

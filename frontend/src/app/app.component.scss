@@ -124,3 +124,8 @@
   a { color: var(--text); text-decoration: none; font-size: 0.85rem; &:hover { color: var(--accent); } }
   .chan { color: var(--muted); }
 }
+
+.synthesis {
+  border-left: 3px solid var(--accent);
+  p { margin: 0; line-height: 1.6; }
+}

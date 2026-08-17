@@ -15,8 +15,10 @@ sentence-transformers==3.3.1 # embeddings (modèle MiniLM par défaut)
 # --- Étape 4 : vidéos YouTube ---
 google-api-python-client==2.156.0  # API YouTube Data v3
 
-# --- Étapes suivantes (décommenter au fur et à mesure) ---
-# pymongo==4.10.1             # persistance MongoDB
+# --- Étape 6 : orchestration LangGraph + LLM + persistance ---
+langgraph==0.2.60           # orchestration de l'agent (graphe d'états)
+openai==1.59.6              # client Azure OpenAI (synthèse LLM)
+pymongo==4.10.1             # journalisation MongoDB
 # pymilvus==2.5.4             # base vectorielle Milvus
 # sentence-transformers==3.3.1 # embeddings pour le RAG
 # langgraph==0.2.60           # orchestration de l'agent

@@ -28,6 +28,15 @@
         Ouverture : <strong>{{ openingName }}</strong>
       </div>
 
+      <!-- Synthèse de l'agent (LLM) -->
+      <div class="card synthesis" *ngIf="synthesis">
+        <h2>
+          Conseil de l'agent
+          <span class="src" *ngIf="synthesisSource">({{ synthesisSource }})</span>
+        </h2>
+        <p>{{ synthesis }}</p>
+      </div>
+
       <!-- Évaluation Stockfish -->
       <div class="card">
         <h2>Évaluation (Stockfish)</h2>

@@ -31,6 +31,12 @@ class Settings(BaseSettings):
 
     YOUTUBE_API_KEY: str = ""
 
+    # Azure OpenAI (synthèse en langage naturel de l'agent)
+    AZURE_OPENAI_API_KEY: str = ""
+    AZURE_OPENAI_ENDPOINT: str = "https://openclassrooms.openai.azure.com/"
+    AZURE_OPENAI_API_VERSION: str = "2024-12-01-preview"
+    AZURE_OPENAI_DEPLOYMENT: str = "gpt-4o-mini"
+
     # pydantic-settings : lit automatiquement le .env s'il existe
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

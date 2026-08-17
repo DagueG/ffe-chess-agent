@@ -99,5 +99,5 @@ Le front (nginx) proxifie `/api` vers le backend : appels relatifs, pas de CORS.
 - [x] **Étape 3** — RAG Wikichess → embeddings MiniLM → Milvus (`/vector-search`)
 - [x] **Étape 4** — Recherche de vidéos YouTube (`videos/{opening}`) + fallback
 - [x] **Étape 5** — Interface Angular (ngx-chess-board + panneau : coups, éval, RAG, vidéos)
-- [ ] **Étape 6** — Orchestration LangGraph + conteneurisation complète
+- [x] **Étape 6** — Agent LangGraph (routage conditionnel) + LLM Azure + MongoDB
 - [ ] **Étape 7** — Étude MCP d'analyse vidéo (note + archi + faisabilité)
