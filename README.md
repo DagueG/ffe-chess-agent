@@ -100,4 +100,4 @@ Le front (nginx) proxifie `/api` vers le backend : appels relatifs, pas de CORS.
 - [x] **Étape 4** — Recherche de vidéos YouTube (`videos/{opening}`) + fallback
 - [x] **Étape 5** — Interface Angular (ngx-chess-board + panneau : coups, éval, RAG, vidéos)
 - [x] **Étape 6** — Agent LangGraph (routage conditionnel) + LLM Azure + MongoDB
-- [ ] **Étape 7** — Étude MCP d'analyse vidéo (note + archi + faisabilité)
+- [x] **Étape 7** — Étude MCP d'analyse vidéo (docs/etude_mcp.docx)
