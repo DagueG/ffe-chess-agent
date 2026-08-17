@@ -25,6 +25,20 @@ services:
       - ffe_net
 
   # ---------------------------------------------------------------------------
+  # Frontend Angular (échiquier interactif + panneau de recommandations)
+  #   Build multi-stage -> servi par nginx, qui proxifie /api vers le backend.
+  # ---------------------------------------------------------------------------
+  frontend:
+    build: ./frontend
+    container_name: ffe_frontend
+    ports:
+      - "${FRONTEND_PORT:-4200}:80"
+    depends_on:
+      - backend
+    networks:
+      - ffe_net
+
+  # ---------------------------------------------------------------------------
   # MongoDB (métadonnées : parties, vidéos, historique...)
   # ---------------------------------------------------------------------------
   mongo:

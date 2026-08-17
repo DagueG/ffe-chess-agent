@@ -66,12 +66,38 @@ ffe-chess-agent/
 └── .env.example
 ```
 
-## Feuille de route
+## RAG — indexation des connaissances (étape 3)
 
-- [x] **Étape 1** — Socle projet, Git, Docker Compose, healthcheck FastAPI
-- [ ] **Étape 2** — Endpoints `moves/{fen}` (Lichess) et `evaluate/{fen}` (Stockfish)
-- [ ] **Étape 3** — RAG Wikichess → embeddings → Milvus (`/vector-search`)
-- [ ] **Étape 4** — Recherche de vidéos YouTube (`videos/{opening}`)
-- [ ] **Étape 5** — Interface Angular (échiquier + panneau de recommandations)
-- [ ] **Étape 6** — Conteneurisation complète + démonstration
+Après avoir démarré la stack, il faut indexer les articles d'ouvertures dans
+Milvus (une seule fois ; à relancer si les données changent) :
+
+```bash
+docker compose exec backend python -m app.scripts.ingest_wikichess
+```
+
+Au premier lancement, le modèle d'embedding MiniLM (~80 Mo) se télécharge.
+Ensuite, tester la recherche vectorielle :
+
+```
+GET http://localhost:8000/api/v1/vector-search?query=Sicilienne&k=3
+```
+
+## Interface (étape 5)
+
+Une fois la stack lancée, l'interface est accessible sur **http://localhost:4200**.
+Elle affiche un échiquier interactif (`ngx-chess-board`) : joue un coup, et le
+panneau de droite se met à jour avec les coups théoriques, l'évaluation
+Stockfish, le contexte Wikichess (RAG) et des vidéos explicatives.
+
+Note technique : la mission suggérait `ngx-chessboard` (paquet Angular 8, en fin
+de vie et basé sur jQuery). On lui a préféré `ngx-chess-board` (v2.2.3), maintenu
+et compatible Angular 17, qui expose nativement le FEN et les événements de coup.
+Le front (nginx) proxifie `/api` vers le backend : appels relatifs, pas de CORS.
+
+## Feuille de route- [x] **Étape 1** — Socle projet, Git, Docker Compose, healthcheck FastAPI
+- [x] **Étape 2** — Endpoints `moves/{fen}` (Lichess + fallback local) et `evaluate/{fen}` (Stockfish)
+- [x] **Étape 3** — RAG Wikichess → embeddings MiniLM → Milvus (`/vector-search`)
+- [x] **Étape 4** — Recherche de vidéos YouTube (`videos/{opening}`) + fallback
+- [x] **Étape 5** — Interface Angular (ngx-chess-board + panneau : coups, éval, RAG, vidéos)
+- [ ] **Étape 6** — Orchestration LangGraph + conteneurisation complète
 - [ ] **Étape 7** — Étude MCP d'analyse vidéo (note + archi + faisabilité)

@@ -8,10 +8,12 @@ httpx==0.28.1
 chess==1.11.1                 # validation FEN, légalité des coups, pilotage UCI de Stockfish
 
 # --- Étape 3 : RAG (recherche vectorielle) ---
-setuptools<81
+setuptools<81               # fournit pkg_resources, requis par pymilvus
 pymilvus==2.5.4              # client Milvus
 sentence-transformers==3.3.1 # embeddings (modèle MiniLM par défaut)
 
+# --- Étape 4 : vidéos YouTube ---
+google-api-python-client==2.156.0  # API YouTube Data v3
 
 # --- Étapes suivantes (décommenter au fur et à mesure) ---
 # pymongo==4.10.1             # persistance MongoDB

@@ -57,11 +57,13 @@ def _normalize_lichess_response(data: dict, top_moves: int) -> dict:
 
 
 def _fallback_lookup(fen: str, top_moves: int):
-    """Cherche la position dans la base locale. On compare sur les 4 premiers
-    champs du FEN (pieces, trait, roques, prise en passant) en ignorant les
-    compteurs de coups, pour etre plus tolerant."""
+    """Cherche la position dans la base locale. On compare sur les 3 premiers
+    champs du FEN (placement des pieces, trait, roques) en ignorant la prise en
+    passant et les compteurs de coups. C'est indispensable car un echiquier
+    genere le champ de prise en passant (ex. 'e3' apres 1.e4) alors que la base
+    peut le stocker a '-' : comparer ces champs ferait echouer la correspondance."""
     def key(f: str) -> str:
-        return " ".join(f.split()[:4])
+        return " ".join(f.split()[:3])
 
     target = key(fen)
     for stored_fen, payload in _FALLBACK_DATA.items():

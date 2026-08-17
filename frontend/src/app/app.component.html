@@ -1,0 +1,89 @@
+<div class="app">
+  <header class="header">
+    <h1>♟ Assistant d'ouvertures — FFE</h1>
+    <p class="subtitle">Joue un coup sur l'échiquier : l'agent analyse la position.</p>
+  </header>
+
+  <div class="layout">
+    <!-- Colonne échiquier -->
+    <section class="board-col">
+      <ngx-chess-board
+        #board
+        [size]="400"
+        (moveChange)="onMove($event)">
+      </ngx-chess-board>
+      <button class="reset-btn" (click)="reset()">↺ Réinitialiser</button>
+      <div class="fen-box">
+        <span class="label">FEN</span>
+        <code>{{ fen }}</code>
+      </div>
+    </section>
+
+    <!-- Colonne recommandations -->
+    <section class="panel">
+      <div *ngIf="loading" class="loading">Analyse en cours…</div>
+
+      <!-- Ouverture identifiée -->
+      <div *ngIf="openingName" class="opening-badge">
+        Ouverture : <strong>{{ openingName }}</strong>
+      </div>
+
+      <!-- Évaluation Stockfish -->
+      <div class="card">
+        <h2>Évaluation (Stockfish)</h2>
+        <div class="eval-value">{{ formatEval() }}</div>
+        <div class="eval-hint" *ngIf="evaluation?.best_move">
+          Meilleur coup : <strong>{{ evaluation.best_move }}</strong>
+        </div>
+      </div>
+
+      <!-- Coups théoriques -->
+      <div class="card">
+        <h2>
+          Coups théoriques
+          <span class="src" *ngIf="movesSource">({{ movesSource }})</span>
+        </h2>
+        <ul class="moves" *ngIf="moves.length; else noMoves">
+          <li *ngFor="let m of moves">
+            <span class="san">{{ m.san }}</span>
+            <span class="games">{{ m.games | number }} parties</span>
+            <span class="bar">
+              <span class="w" [style.width.%]="m.white_pct"></span>
+              <span class="d" [style.width.%]="m.draw_pct"></span>
+              <span class="b" [style.width.%]="m.black_pct"></span>
+            </span>
+          </li>
+        </ul>
+        <ng-template #noMoves>
+          <p class="empty">Position hors théorie — fie-toi à l'évaluation Stockfish.</p>
+        </ng-template>
+      </div>
+
+      <!-- Contexte RAG -->
+      <div class="card" *ngIf="ragResults.length">
+        <h2>Contexte (Wikichess)</h2>
+        <p class="rag" *ngFor="let r of ragResults">{{ r.text }}</p>
+      </div>
+
+      <!-- Vidéos -->
+      <div class="card" *ngIf="videos.length">
+        <h2>Vidéos explicatives</h2>
+        <div class="video-embed" *ngIf="videos[0]?.embed_url">
+          <iframe
+            [src]="safeEmbed(videos[0].embed_url)"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <ul class="video-list">
+          <li *ngFor="let v of videos">
+            <a [href]="v.url" target="_blank" rel="noopener">
+              {{ v.title }}
+              <span class="chan" *ngIf="v.channel">— {{ v.channel }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>

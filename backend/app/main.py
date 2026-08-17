@@ -6,7 +6,7 @@ Les étapes suivantes viendront brancher ici les routeurs moves/evaluate/vector-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.v1.routes import chess, health, rag
+from app.api.v1.routes import chess, health, rag, videos
 from app.core.config import get_settings
 
 settings = get_settings()
@@ -30,6 +30,7 @@ app.add_middleware(
 app.include_router(health.router, prefix=settings.API_V1_PREFIX)
 app.include_router(chess.router, prefix=settings.API_V1_PREFIX)
 app.include_router(rag.router, prefix=settings.API_V1_PREFIX)
+app.include_router(videos.router, prefix=settings.API_V1_PREFIX)
 
 
 @app.get("/")
